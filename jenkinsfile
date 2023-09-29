@@ -1,0 +1,14 @@
+node('master') 
+{
+    stage('CD-S1-git') 
+    {
+      git 'https://github.com/NAFEESA-AWS-DEVOPS/Nafeesa-warfile.git'
+    }
+}
+node('master') 
+{
+    stage('CD-S2-maven') 
+    {
+      sh 'mvn package'
+    }
+}
